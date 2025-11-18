@@ -30,23 +30,6 @@ body{
     background: var(--bg-color);
     color: var(--text-color);
 }
-@media (max-width:600px){
-  #contact {
-    border: 5px solid red; /* Starting color */
-  border-radius: 30px;
-  animation: borderColorChange 10s linear infinite;
-    
-}
-
-@keyframes borderColorChange {
-  0%   { border-color:  rgba(146, 54, 192, 0.7); }
-  25%  { border-color: black; }
-  50%  { border-color: rgba(146, 54, 192, 0.7); }
-  75%  { border-color: rgb(255, 255, 255) }
-  100% { border-color: rgba(146, 54, 192, 0.7); }
-}
-
-}
 
 @keyframes spin {
     0%{
@@ -97,7 +80,6 @@ body{
 
 
 .herder{
-    
     overflow: hidden;
     position: fixed;
     top: 0;
@@ -127,16 +109,11 @@ body{
     0 0 30px rgba(0, 0, 0, 0.7); 
 }
 
-@media (max-width:500px){
- .logo-animation span{
-    
-}
-}
+
 
 
 
   span {
-    display: inline;
     opacity: 0;
     display: inline-block;
     animation: fadeIn 5s forwards;
@@ -167,7 +144,6 @@ body{
 
 
 .herder-right a{
-    
     font-size:1.8rem ;
     color: var(--text-color);
     margin-left: 4rem;
@@ -187,14 +163,9 @@ body{
 .herder-right a{
     float: left;
 }
-@media (max-width:600px) {
-    .herder-right a {
-       overflow: hidden;
-        font-size: 1.5rem;
-        margin-left: 2rem;
-    }
-    
-}
+
+
+
 
 
 .front-page{
@@ -348,7 +319,7 @@ h1{
 }
 
 /* Very small screen: Hide image */
-@media (max-width: 700px) {
+@media (max-width: 320px) {
     .right-side img {
         display: none; /* Image disappears */
     }
@@ -437,11 +408,13 @@ main.row{
 
 
 
-.form-contect{
-    display: flex;
-    justify-content: center;
-}
 
+.form-contact{
+    display: flex;
+    justify-self: center;
+   
+
+}
 /* Outer container for the form */
 .form-all {
  
@@ -453,7 +426,7 @@ main.row{
     flex-direction: column; /* Stack heading and form vertically */
     align-items: center; /* Center form heading and form */
     justify-content: center;
-    margin-bottom: 150px;   
+    margin-bottom: 150px;
 
   border: 10px solid red; /* Starting color */
   border-radius: 30px;

@@ -118,14 +118,13 @@ body {
 }
 
 /* Front Page Styling */
-.front-page {
+.front-page{
     position: relative;
     top: 80px;
     left: 0;
     width: 100%;
     padding: 4rem 12% 4rem;
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping on mobile */
 }
 
 h1 {
@@ -622,3 +621,4 @@ form button:hover {
 .resume-btn:active {
     transform: translateY(0);
 }
+

@@ -1,6 +1,8 @@
- /* Enable smooth scrolling */
- html {
+/* Enable smooth scrolling */
+html {
     scroll-behavior: smooth;
+    font-size: 60%;
+    overflow-x: hidden;
 }
 
 * {
@@ -16,70 +18,45 @@
 :root {
     --bg-color: #000800;
     --text-color: #fff;
-    --main-color:rgba(0, 0, 0, 0.7);
-    font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+    --main-color: rgba(0, 0, 0, 0.7);
+    font-family: Avant Garde, Avantgarde, Century Gothic, CenturyGothic, AppleGothic, sans-serif; 
 }
 
-
-html{
-    font-size: 60%;
-    overflow-x: hidden;
-}
-
-body{
+body {
     background: var(--bg-color);
     color: var(--text-color);
 }
 
 @keyframes spin {
-    0%{
-
-    }
-     30%{  
-
-
-      }
- 
-    50%{
-            transform: rotate(180deg);
-    }
-
-    100%{
-            transform: rotate(360deg);
-    }
+    0% { transform: rotate(0deg); }
+    30% { transform: rotate(100deg); } 
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
 }
 
-
-
-
-.button-box{
+.button-box {
     display: flex; /* Aligns buttons in a row */
     gap: 30px; 
+}
 
-}
-.button-box button{
+.button-box button {
     margin-top: 100px;
-    padding: 15px 30px; /* Increases button size */
-    font-size: 1.5rem; /* Increases text size */
-    background-color: rgba(146, 54, 192, 0.7); /* Button background color */
-    color: rgb(255, 255, 255); /* Text color */
-    border: none; /* Removes border */
-    border-radius: 15px; /* Rounded corners */
-    cursor: pointer; /* Adds a pointer cursor */
-   
-    
-    
+    padding: 15px 30px; 
+    font-size: 1.5rem; 
+    background-color: rgba(146, 54, 192, 0.7); 
+    color: rgb(255, 255, 255); 
+    border: none; 
+    border-radius: 15px; 
+    cursor: pointer; 
 }
+
 .button-box button:active {
     animation-name: spin;
-    animation-duration: ease;
+    animation-duration: 1s; /* Added missing time unit */
 }
 
-
-
-
-
-.herder{
+/* Header Styling (Fixed typo: herder -> header-main) */
+.header-main {
     top: 0;
     left: 0;
     width: 100%;
@@ -90,26 +67,26 @@ body{
     align-items: center;
 }
 
-.logo{
+.logo {
     font-size: 3rem;
     color: rgb(255, 255, 255);
     font-weight: 800;
     cursor: pointer;
-    transition: 0.3 ease;
-    
+    transition: 0.3s ease; /* Added 's' unit */
 }
 
-.logo:hover{
+.logo:hover {
     transform: scale(1.1);
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.7), 
-    0 0 30px rgba(0, 0, 0, 0.7); 
+                 0 0 30px rgba(0, 0, 0, 0.7); 
 }
+
 @font-face {
   font-family: 'MyCustomFont';
   src: url('my-cool-font.ttf') format('truetype');
 }
 
-.logo-animation p{
+.logo-animation p {
     font-family: "Style Script", cursive;
     font-size: 5rem;
     font-weight: 800;
@@ -120,51 +97,46 @@ body{
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    
 }
 
-.herder-right a{
-    font-size:1.8rem ;
+.header-right a {
+    font-size: 1.8rem;
     color: var(--text-color);
     margin-left: 4rem;
     font-weight: 500;
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;
-}
-
-.herder-right a:hover,
-.herder-right a:active{
-    color: var(--main-color); 
-    border-bottom: 3px solid var(--main-color); 
-    text-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.7);
-
-}
-
-.herder-right a{
     float: left;
 }
 
+.header-right a:hover,
+.header-right a:active {
+    color: var(--main-color); 
+    border-bottom: 3px solid var(--main-color); 
+    /* Fixed text-shadow: removed 4th value (spread is not allowed in text-shadow) */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.7); 
+}
 
-
-
-
-.front-page{
+/* Front Page Styling */
+.front-page {
     position: relative;
     top: 80px;
     left: 0;
     width: 100%;
     padding: 4rem 12% 4rem;
     display: flex;
+    flex-wrap: wrap; /* Allows wrapping on mobile */
 }
-h1{
+
+h1 {
     font-size: xx-large;
 }
-.content-left{
+
+.content-left {
     margin-top: 100px;
 }
 
-
-.position{
+.position {
     margin-top: 10px;
     font-size: 2rem;
     border-right: 4px solid rgba(146, 54, 192, 0.7);
@@ -172,13 +144,13 @@ h1{
     white-space: nowrap; 
     overflow: hidden; 
 }
-.small-detail{
-   
+
+.small-detail {
     margin-top: 30px;
-    font-size: 2rem ;
+    font-size: 2rem;
     line-height: 1.6;
-     text-align: justify;
-     text-indent: 4rem;
+    text-align: justify;
+    text-indent: 4rem;
 }
 
 @keyframes typing {
@@ -195,162 +167,123 @@ h1{
     animation: typing 5s steps(40, end) infinite, blink 0.75s step-end infinite;
 }
 
-
-
-
-.small-logo{
+.small-logo {
     display: flex;
-    align-items: flex-start; /* Aligns logos to the top */
-    gap: 30px; /* The space between your logos */
+    align-items: flex-start;
+    gap: 30px;
 }
     
-.small-logo-one img{
-  /* position: relative; and left: 10px; are no longer needed for spacing */
-  margin-top: 160px;
+.small-logo-one img {
+  margin-top: 60px; /* Reduced margin */
   width: auto;
   height: 30px;
- 
 }
-
-
 
 /* 1. Define the jump animation */
 @keyframes jump {
-  0% {
-    transform: translateY(0); /* Start at the original position */
-  }
-  50% {
-    transform: translateY(-15px); /* Jump up by 15px at the halfway point */
-  }
-  100% {
-    transform: translateY(0); /* Return to the original position */
-  }
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
 }
 
-
-
-
 /* 2. Apply the animation to BOTH logos */
-.small-logo img { /* Targets all images inside any .small-logo container */
-  /* Your existing styles */
-  margin-top: 160px;
+.small-logo img { 
+  margin-top: 60px; /* Reduced margin */
   width: auto;
   height: 30px;
-
-  /* Add this line to apply the looping animation */
   animation: jump 1.5s ease-in-out infinite;
 }
 
-
-
-
-
-
-
-
-
+/* Profile Image Styling - Removed Duplicate Code */
 .right-side img {
     margin-top: 70px;
     width: auto; 
     height: 500px; 
     margin-left: 120px;
-    border-radius: 50%; /* Crop the image into a circle */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    border-radius: 50%;
+    transition: all 0.3s ease; 
 }
 
 .right-side img:hover {
-    box-shadow: 0 0 25px 10px rgba(146, 54, 192, 0.7); /* Glow effect */
-    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 0 25px 10px rgba(146, 54, 192, 0.7); 
+    transform: scale(1.05); 
 }
 
-
-
-
-.right-side img {
-    margin-top: 70px;
-    width: auto;
-    height: 500px;
-    margin-left: 120px;
-    border-radius: 50%; /* Crop the image into a circle */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-}
-
-.right-side img:hover {
-    box-shadow: 0 0 25px 10px rgba(255, 255, 255, 0.7); /* glow effect */
-    transform: scale(1.05); /* Slight zoom on hover */
-}
-
-
-
-
-/* Medium screen: Resize image */
+/* Responsive Image */
 @media (max-width: 768px) {
     .right-side img {
-        height: 300px; /* Reduce size for medium screens */
-        margin-left: 60px; /* Adjust left margin */
+        height: 300px; 
+        margin-left: 0; /* Center it */
+        margin-top: 20px;
+    }
+    .front-page {
+        flex-direction: column;
+        align-items: center;
+    }
+    .content-left {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .small-logo {
+        justify-content: center;
     }
 }
 
-/* Small screen: Resize further */
 @media (max-width: 480px) {
     .right-side img {
-        height: 150px; /* Smaller size for small screens */
-        margin-left: 30px; /* Further adjust left margin */
+        height: 150px;
+        margin-left: 0;
     }
 }
 
-/* Very small screen: Hide image */
 @media (max-width: 500px) {
     .right-side img {
-        display: none; /* Image disappears */
+        display: none; 
     }
 }
 
-
-
-
-
-
-.container{
+/* Container & Grid */
+.container {
     margin-top: 100px;
     margin-bottom: 100px;
 	width: 100%;
 	padding: 35px 10%;
-    
+    padding-right: calc(10% - 30px);
 }
-.container{
-	padding-right: calc(10% - 30px);
-}
-main.row{
+
+main.row {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-column-gap: 20px;
-    
 }
-.col header.title{
-	font-size: large ;
+
+.col header.title {
+	font-size: large;
 	color: #ffffff;
 	padding: 0px 0px 20px 30px;
 }
-.col .contents{
+
+.col .contents {
 	padding: 0px 30px;
 	border-left: 2px solid #ffffff;
 }
-.col .contents .box{
+
+.col .contents .box {
 	position: relative;
 	padding: 20px;
-	
 	background-color: #000000;
 	cursor: pointer;
 	transition: all 0.4s;
 	margin-bottom: 20px;
     border-radius: 10px;
 }
-.col .contents .box:hover{
-	box-shadow: 0px 3px 12px 0px  rgba(146, 54, 192, 0.7);
+
+.col .contents .box:hover {
+	box-shadow: 0px 3px 12px 0px rgba(146, 54, 192, 0.7);
 	border: 1px solid transparent;
 }
-.col .contents .box::before{
+
+.col .contents .box::before {
 	content: '';
 	position: absolute;
 	width: 16px;
@@ -362,127 +295,113 @@ main.row{
 	border: 2px solid white;
 }
 
-
-.box h4{
+.box h4 {
 	position: relative;
 	color: rgba(146, 54, 192, 0.7);
 }
-.box h3{
+
+.box h3 {
 	font-size: 19px;
 	padding: 10px 0px 6px;
-
 	color: #ffffff;
 }
-.box p{
+
+.box p {
 	line-height: 1.2;
 	color: #ffffff;
 	font-size: 17px;
 }
-@media(max-width: 768px){
-	main.row{
+
+@media(max-width: 768px) {
+	main.row {
 		grid-template-columns: 1fr;
 	}
-	.row .col:nth-child(2){
+	.row .col:nth-child(2) {
 		margin-top: 30px;
 	}
 }
 
-
-
-
-.form-contact{
+/* Contact Form Styling */
+.form-contact {
     display: flex;
-    justify-self: center;
-   
-
+    justify-content: center; /* Corrected property */
 }
-/* Outer container for the form */
+
 .form-all {
- 
     background-color: black;
     padding: 20px 30px;
-    width: 90%; /* Responsive width */
-    max-width: 800px; /* Max width for larger screens */
+    width: 90%; 
+    max-width: 800px; 
     display: flex;
-    flex-direction: column; /* Stack heading and form vertically */
-    align-items: center; /* Center form heading and form */
+    flex-direction: column; 
+    align-items: center; 
     justify-content: center;
     margin-bottom: 150px;
-
-  border: 10px solid red; /* Starting color */
-  border-radius: 30px;
-  animation: borderColorChange 10s linear infinite;
-    
+    border: 5px solid rgba(146, 54, 192, 0.7); /* Removed red border, using theme color */
+    border-radius: 30px;
+    animation: borderColorChange 10s linear infinite;
 }
 
 @keyframes borderColorChange {
-  0%   { border-color:  rgba(146, 54, 192, 0.7); }
+  0%   { border-color: rgba(146, 54, 192, 0.7); }
   25%  { border-color: black; }
   50%  { border-color: rgba(146, 54, 192, 0.7); }
-  75%  { border-color: rgb(255, 255, 255) }
+  75%  { border-color: rgb(255, 255, 255); }
   100% { border-color: rgba(146, 54, 192, 0.7); }
 }
 
-/* Form heading */
-.from-heading h2 {
+.form-heading h2 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 3rem;
     color: #ffffff;
 }
 
-/* Flexbox layout for form data */
 .form {
     display: flex;
-    justify-content: space-between; /* Create two columns */
-    gap: 20px; /* Space between columns */
+    justify-content: space-between; 
+    gap: 20px; 
     width: 100%;
 }
 
-/* Left column inputs */
 .form-data-left {
-    flex: 1; /* Left column takes equal space */
+    flex: 1; 
     display: flex;
-    flex-direction: column; /* Stack inputs vertically */
-    max-width: 300px; /* Limit the width of the left column */
-    
-}
-.text-input{
-    margin: 1rem;
-
+    flex-direction: column; 
+    /* max-width: 300px; Removed restriction for responsiveness */
 }
 
-/* Right column for textarea and button */
+.text-input {
+    margin: 1rem 0; /* Adjusted margin */
+}
+
 .form-data-right {
-    flex: 1; /* Right column takes equal space */
+    flex: 1; 
     display: flex;
-    flex-direction: column; /* Stack textarea and button vertically */
-    gap: 15px; /* Space between textarea and button */
-    max-width: 300px; /* Limit the width of the right column */
+    flex-direction: column; 
+    gap: 15px; 
+    /* max-width: 300px; Removed restriction */
 }
 
-/* Input and textarea styling */
 form input,
 form textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1.5rem;
-    width: 100%; /* Inputs and textarea fill their container width */
-    box-sizing: border-box; /* Ensure padding doesn't overflow */
+    width: 100%; 
+    box-sizing: border-box; 
 }
 
-/* Textarea specific styles */
 form textarea {
-    height: 150px; /* Fixed height for message box */
-    resize: none; /* Disable resizing */
+    height: 150px; 
+    resize: none; 
 }
 
-/* Button styling */
 form button {
     padding: 15px;
-    margin: 15px;
-    background-color: rgba(146, 54, 192, 0.7) ;
+    margin: 15px 0;
+    background-color: rgba(146, 54, 192, 0.7);
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -491,25 +410,20 @@ form button {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Button hover effect */
 form button:hover {
     background-color: #007bff;
-    transform: scale(1.05); /* Slight zoom effect */
+    transform: scale(1.05); 
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .form {
-        flex-direction: column; /* Stack columns vertically on smaller screens */
-        align-items: center; /* Center form content */
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .form-data-left, .form-data-right {
+        width: 100%;
     }
 }
-
-
-
-
-
-
 
 /* Footer Styling */
 .footer {
@@ -517,99 +431,88 @@ form button:hover {
     position: relative;
     bottom: 0;
     background: linear-gradient(80deg, #000800, #4C1D95); 
-    color: #fff; /* White text */
-    padding: 20px 0; /* Space around footer content */
+    color: #fff; 
+    padding: 20px 0; 
     display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
+    justify-content: center; 
+    align-items: center; 
 }
 
-/* Footer Content (Centering everything) */
 .footer-content {
-    width: 90%; /* Width of footer content */
-    max-width: 1200px; /* Maximum width */
+    width: 90%; 
+    max-width: 1200px; 
     display: flex;
-    justify-content: space-between; /* Align logos and text to opposite sides */
-    align-items: center; /* Center vertically */
-    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+    justify-content: space-between; 
+    align-items: center; 
+    flex-wrap: wrap; 
 }
 
-/* Logos section */
 .footer-logos {
     display: flex;
-    justify-content: center; /* Center logos */
-    gap: 20px; /* Space between logos */
+    justify-content: center; 
+    gap: 20px; 
 }
 
 .footer-logos img {
-    height: 50px; /* Set height of logos */
+    height: 50px; 
     width: auto;
     transition: transform 0.3s ease;
 }
 
-/* Logo Hover Effect */
 .footer-logos img:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
+    transform: scale(1.1); 
 }
 
-/* Footer Text section */
 .footer-text {
     color: #ccc;
-    text-align: center; /* Center the text */
+    text-align: center; 
     margin-top: 10px;
     font-size: 2rem;
 }
 
-.footer a{
+.footer a {
     color: #f8d614;
-
 }
 
-
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .footer-content {
-        flex-direction: column; /* Stack logos and text vertically on smaller screens */
-        text-align: center; /* Center-align the text for mobile */
+        flex-direction: column; 
+        text-align: center; 
     }
-
     .footer-logos {
-        margin-bottom: 15px; /* Space between logos and text on mobile */
+        margin-bottom: 15px; 
     }
 }
 
-
-
-/* Form Skills */
-.skills-seaction h2 {
+/* Skills Section */
+.skills-section h2 { /* Fixed typo: seaction -> section */
     letter-spacing: 5px;
     text-align: center;
     margin-bottom: 20px;
     font-size: 3.5rem;
     color: #ffffff;
     text-decoration: solid;
-   
 }
 
-.skills-container{
+.skills-container {
     display: flex;
     flex-wrap: wrap; 
-    gap: 10rem;
-    margin-left: 10rem ;
+    gap: 5rem; /* Reduced gap for better mobile fit */
+    justify-content: center; /* Centered instead of fixed margin-left */
     margin-bottom: 150px;
     margin-top: 100px;
-
+    padding: 20px;
 }
+
 .skills-container img {
     height: 100px;
     width: auto;
-    opacity: 0; /* Hidden at start */
-   transform: translateY(20px); /* Slightly moved down */
-   animation: fadeIn 0.8s ease forwards;
-
+    opacity: 0; 
+    transform: translateY(20px); 
+    animation: fadeIn 0.8s ease forwards;
 }
 
-/* Different delays for each image */
+/* Delays */
 .skills-container img:nth-child(1)  { animation-delay: 5.2s; }
 .skills-container img:nth-child(2)  { animation-delay: 5.4s; }
 .skills-container img:nth-child(3)  { animation-delay: 5.6s; }
@@ -623,8 +526,6 @@ form button:hover {
 .skills-container img:nth-child(11) { animation-delay: 7.2s; }
 .skills-container img:nth-child(12) { animation-delay: 7.4s; }
 
-
-
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -632,61 +533,47 @@ form button:hover {
   }
 }
 
-
-
-
-.skills-container :hover{
-    border: 2px solid rgb(255, 255, 255); /* hover border */
+.skills-container img:hover { /* Fixed selector: removed space between container and hover to target images */
+    border: 2px solid rgb(255, 255, 255); 
     border-radius: 20rem;
     box-shadow: 0 0 10px rgb(255, 255, 255);
 }
 
-
-
-
-
-
-@keyframes appear{
-    from{
+@keyframes appear {
+    from {
         opacity: 0;
         scale: 0.5;
     }
-    to{
+    to {
         opacity: 1;
         scale: 1;
     }
 }
-.herder,.front-page,.container,.form-contact {
+
+.header-main, .front-page, .container, .form-contact {
     animation: appear linear;
     animation-timeline: view();
     animation-range: entry 0 cover 40%;
 }
 
-
-
-
-
-
-
-
-/* Center the button (optional) */
+/* Resume Button */
 .resume-container {
     text-align: center;
     margin: 50px 0;
-    
 }
-.resume-container p{
-    font-size:3rem ;
+
+.resume-container p {
+    font-size: 3rem;
     font-weight: 600;
     margin-bottom: 40px;
 }
 
-/* Button Styling */
 .resume-btn {
+    display: inline-block; /* Essential for padding/width on <a> tags */
     font-size: 20px;
     padding: 10px 40px;
-    width: 220px;
-    height: 50px;
+    width: 250px; /* Adjusted width */
+    height: auto;
     border: none;
     outline: none;
     color: #fff;
@@ -695,7 +582,9 @@ form button:hover {
     position: relative;
     z-index: 0;
     border-radius: 10px;
+    line-height: 30px; /* Vertically center text */
 }
+
 .resume-btn:before {
     content: '';
     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
@@ -708,7 +597,7 @@ form button:hover {
     width: calc(100% + 4px);
     height: calc(100% + 4px);
     animation: glowing 20s linear infinite;
-    opacity: 1;           /* Always visible */
+    opacity: 1; 
     border-radius: 10px;
 }
 
@@ -730,8 +619,6 @@ form button:hover {
     100% { background-position: 0 0; }
 }
 
-
-/* Active/Click Effect */
 .resume-btn:active {
     transform: translateY(0);
 }
